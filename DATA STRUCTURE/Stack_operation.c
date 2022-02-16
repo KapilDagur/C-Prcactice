@@ -3,12 +3,12 @@
 #define MAXSIZE 50
 
 //Structure Define
-struct stack
+struct Stack
 {
-	int stack1[MAXSIZE];
+	int stack[MAXSIZE];
 	int top;
 };
-typedef struct stack STACK;
+typedef struct Stack STACK;
 
 //Function Prototype
 void push(STACK *, int);
@@ -25,7 +25,7 @@ int main()
 	{
 		printf("\nPress 1 For PUSH an Element : \n");
 		printf("Press 2 For POP an Element : \n");
-		printf("Press 3 For Travers : \n");
+		printf("Press 3 For Traverse : \n");
 		printf("Press 4 For EXIT : \n");
 		printf("ENTER YOUR CHOICE : ");
 		scanf("%d",&ch);
@@ -71,7 +71,7 @@ void push(STACK *s,int item)
 	else
 	{
 		s->top = s->top+1;
-		s->stack1[s->top] = item;
+		s->stack[s->top] = item;
 	}
 }
 
@@ -85,7 +85,7 @@ int pop(STACK *s)
 	}
 	else
 	{
-		data = s->stack1[s->top];
+		data = s->stack[s->top];
 		s->top = s->top-1;
 		return data;
 	}
@@ -94,16 +94,18 @@ int pop(STACK *s)
 //TRAVERSE OPERATION FUNCTION DEFINITION......
 void traverse(STACK *s)
 {
-	if(s->top == -1)
+	int i;
+	i = s->top;
+	if(i == -1)
 	{
 		printf("\nSTACK IS UNDERFLOW(EMPTY)!!! TRAVERSING NOT POSSIBLE\n");
 	}
 	else
 	{
-		while (s->top != -1)
+		while (i != -1)
 		{
-			printf("%d\t",s->stack1[s->top]);
-			s->top = s->top-1;
+			printf("%d\t",s->stack[s->top]);
+			i = i-1;
 		}
 	}
 }
