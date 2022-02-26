@@ -14,21 +14,14 @@ int main()
 	}
 	for(i=0;i<len-1;i++)
 	{
-		int flag = 0;
 		for(j=0;j<len-1-i;j++)
 		{
 			if(arr[j] > arr[j+1])
 			{
-				flag++;
 				int temp = arr[j];
 				arr[j] = arr[j+1];
 				arr[j+1] = temp;
 			}
-		}
-		if(flag == 0)
-		{
-			printf("%d\n",i);
-			break;
 		}
 	}
 	for(i=0;i<len;i++)
