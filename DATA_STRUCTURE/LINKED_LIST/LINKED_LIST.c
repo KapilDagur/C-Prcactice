@@ -416,7 +416,16 @@ int main()
 				
 			//EXIT From Program.......
 			case 12:
-				free(start);
+				while(start != NULL)
+				{
+					q = start;
+					start = start->next;
+					free(q);
+				}
+				if(start == NULL)
+				{
+					printf("\nYes Every Nodes Are Free Now !!!\n");
+				}
 				break;
 			
 			//Invalid Input Case.......
