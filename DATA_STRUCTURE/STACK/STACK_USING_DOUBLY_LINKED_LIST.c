@@ -107,6 +107,7 @@ int main()
 				{
 					p = TOP;
 					TOP = TOP->Prev;
+					TOP->Next = NULL;
 					p->Prev = NULL;
 					free(p);
 				}			
